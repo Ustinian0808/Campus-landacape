@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring_link</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+            border: 0;
+            /* 取消图片底侧有空白缝隙的问题 */
+            vertical-align: middle
+        }
+
+        .box {
+            height: 160vh;
+            overflow-x: hidden;
+        }
+
+        .background {
+            background-image: url(img/Spring_link/bg4.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 160vh;
+            font: 900 25rem '';
+            /* 指定绘图区的背景： */
+            -webkit-background-clip: text;
+            /* 渐变文字和镂空文字的效果 */
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 200px;
+        }
+
+        .background::before {
+            content: '';
+            background-size: cover;
+            background-image: inherit;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -99;
+        }
+
+        h1 {
+            position: absolute;
+            top: 30px;
+            letter-spacing: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .content {
+            position: absolute;
+            top: 100vh;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50vh;
+            width: 80vw;
+            background-color: rgba(0,0,0,.3);
+        }
+
+        .content ul li {
+            float: left;
+            list-style: none;
+            width: 25%;
+            height: 50%;
+            padding: 15px 10px;
+            /* background-color: rgb(129, 235, 129); */
+        }
+        .content ul li:hover {
+            box-shadow: 1px 10px 20px -4px rgba(0, 0, 0, .3);
+            animation: move .3s linear forwards;
+            cursor: pointer;
+
+           
+        }
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(0, -3px);
+            }
+        }
+        .content ul li video {
+            padding-top: 7px;
+            
+        }
+        .content ul li img {
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Spring</br><span>campus landacape</span></h1>
+        <div class="background"><span>Spring</span></div>
+        <div class="content">
+            <ul>
+                <li><video src="img/Spring_link/01.mp4" controls="controls" width="100%" autoplay="" muted=""></video></li>
+                <li><img src="img/Spring_link/02.jpg" alt="" width="100%"></li>
+                <li><img src="img/Spring_link/03.jpg" alt="" width="100%"></li>
+                <li><img src="img/Spring_link/04.jpg" alt="" width="100%"></li>
+                <li><img src="img/Spring_link/05.jpg" alt="" width="100%"></li>
+                <li><img src="img/Spring_link/06.jpg" alt="" width="100%"></li>
+                <li><img src="img/Spring_link/07.jpg" alt="" width="100%"></li>
+                <li><img src="img/Spring_link/08.jpg" alt="" width="100%"></li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        //  console.log(' 2345678')
+        let background = document.querySelector('.background')
+        document.addEventListener('scroll', () => {
+            let scrollY = window.scrollY
+            if (scrollY !== 0) {
+                // console.log('2345678')
+                background.style.backgroundPosition = `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)`
+            }
+            else {
+                background.style.backgroundPosition = ''
+            }
+        })
+    </script>
+</body>
+
+</html>

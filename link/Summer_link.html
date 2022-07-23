@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer_link</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* 弹性布局 水平居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .box{
+            display: flex;
+            width: 90vw;
+        }
+        .box_in {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            margin: 10px;
+            border-radius: 50px;
+            /* 让所有弹性盒模型对象的子元素都有相同的长度，且忽略它们内部的内容 */
+            flex: 1;
+            cursor: pointer;
+            transition: all .7s ease;
+        }
+        .click {
+            flex: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box_in click" style="background-image: url(img/Summer_link/01.jpg);"></div>
+        <div class="box_in " style="background-image: url(img/Summer_link/03.jpg);"></div>
+        <div class="box_in " style="background-image: url(img/Summer_link/02.jpg);"></div>
+        <div class="box_in " style="background-image: url(img/Summer_link/04.jpg);"></div>
+        <div class="box_in " style="background-image: url(img/Summer_link/05.jpg);"></div>
+    </div>
+    <script>
+        let box_ins = document.querySelectorAll('.box_in')
+        // 调用数组的每个元素
+        box_ins.forEach(box_in => {
+            box_in.addEventListener('click',function(){
+                removeBox_inClass()
+                box_in.classList.add('click')
+            })
+        })
+        
+        function removeBox_inClass(){
+            box_ins.forEach(box_in => {
+                box_in.classList.remove('click')
+            })
+        }
+        
+    </script>
+</body>
+</html>
