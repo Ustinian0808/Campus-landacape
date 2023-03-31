@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autumn_link</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+            border: 0;
+            /* 取消图片底侧有空白缝隙的问题 */
+            vertical-align: middle
+        }
+
+        .box {
+            height: 160vh;
+            overflow-x: hidden;
+        }
+
+        .background {
+            background-image: url(img/Autumn_link/04.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 160vh;
+            font: 900 20rem '';
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 200px;
+        }
+
+        .background::before {
+            content: '';
+            background-size: cover;
+            background-image: inherit;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -99;
+        }
+
+        h1 {
+            position: absolute;
+            top: 30px;
+            letter-spacing: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .content {
+            position: absolute;
+            top: 100vh;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50vh;
+            width: 80vw;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .content .content_left {
+            float: left;
+            width: 25%;
+            height: 100%;
+            padding: 25px 15px;
+            /* background-color: pink; */
+        }
+
+        .content .content_left img {
+            border-radius: 12px;
+        }
+
+        .content .content_right {
+            float: left;
+            width: 75%;
+            height: 100%;
+        }
+
+        .content ul li {
+            float: left;
+            list-style: none;
+            width: 33.3%;
+            height: 50%;
+            padding: 15px 10px;
+            overflow: hidden;
+            /* background-color: rgb(129, 235, 129); */
+        }
+
+        .content ul li video {
+            padding-top: 7px;
+
+        }
+
+        .content ul li img {
+            border-radius: 12px;
+            transition: all .3s;
+        }
+        .content ul li img:hover {
+            transform: rotate(-10deg) scale(1.3,1.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Autumn</br><span>campus landacape</span></h1>
+        <div class="background"><span>Autumn</span></div>
+        <div class="content">
+
+            <div class="content_right">
+                <ul>
+                    <li><img src="img/Autumn_link/02.jpg" alt="" width="100%"></li>
+                    <li><img src="img/Autumn_link/03.jpg" alt="" width="100%"></li>
+                    <li><img src="img/Autumn_link/04.jpg" alt="" width="100%"></li>
+                    <li><img src="img/Autumn_link/05.jpg" alt="" width="100%"></li>
+                    <li><img src="img/Autumn_link/06.jpg" alt="" width="100%"></li>
+                    <li><img src="img/Autumn_link/07.jpg" alt="" width="100%"></li>
+
+                </ul>
+            </div>
+            <div class="content_left">
+                <img src="img/Autumn_link/01.jpg" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //  console.log(' 2345678')
+        let background = document.querySelector('.background')
+        document.addEventListener('scroll', () => {
+            let scrollY = window.scrollY
+            if (scrollY !== 0) {
+                // console.log('2345678')
+                background.style.backgroundPosition = `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)`
+            }
+            else {
+                background.style.backgroundPosition = ''
+            }
+        })
+    </script>
+</body>
+
+</html>

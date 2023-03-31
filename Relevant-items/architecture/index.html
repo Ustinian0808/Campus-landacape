@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" /><!--CSS RESET-->
+  <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+  <link rel="stylesheet" href="css/slid.css">
+  <style class="cp-pen-styles">
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: 62.5%;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-color: #c6d9d3; */
+    }
+
+    header .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    header .overlay h1 {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      margin: 0;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 9rem;
+      text-shadow: 25px -15px rgba(25, 42, 46, 0.04);
+      color: #fff;
+      mix-blend-mode: overlay;
+    }
+
+    header .overlay h1 span {
+      margin-top: -2em;
+      padding-top: 0.5em;
+      display: block;
+      letter-spacing: 5px;
+      font-size: 1.25rem;
+    }
+
+    header .parallax {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    header .parallax div {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+
+    header .parallax .one {
+      background-image: url("pic/001.jpg");
+      z-index: 0;
+    }
+
+
+    main {
+      position: relative;
+      margin-bottom: 15vh;
+      padding: 2em 4em;
+      min-height: 85vh;
+      background-color: #fff;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    /* 手风琴效果 */
+    .box_out {
+      position: relative;
+      /* 弹性布局 水平居中 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f7f7f7;
+    }
+
+    .box {
+      display: flex;
+      width: 80vw;
+    }
+
+    .box_in {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 60vh;
+      margin: 10px;
+      border-radius: 50px;
+      /* 让所有弹性盒模型对象的子元素都有相同的长度，且忽略它们内部的内容 */
+      flex: 1;
+      cursor: pointer;
+      transition: all .7s ease;
+    }
+
+    .box_in_text {
+      position: absolute;
+      top: 0%;
+      display: none;
+    }
+    .box_in_text h3 {
+      height: 100px;
+      line-height: 100px;
+      font-size: 32px;
+      font-weight: 500;
+      color: #666;
+    }
+    .click {
+      flex: 5;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="overlay">
+      <div class="parallax">
+        <h1>Architecture<span>Architecture Aesthetics</span></h1>
+        <div class="one"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="box_out">
+      <div class="box_in_text">
+        <h3>&nbsp;气派&nbsp;&nbsp;&nbsp;华丽&nbsp;&nbsp;&nbsp;宏大</h3>
+      </div>
+      <div class="box">
+        <div class="box_in click" style="background-image: url(pic/01.jpg);"></div>
+        <div class="box_in " style="background-image: url(pic/02.jpg);"></div>
+        <div class="box_in " style="background-image: url(pic/03.jpg);"></div>
+        <div class="box_in " style="background-image: url(pic/04.jpg);"></div>
+        <div class="box_in " style="background-image: url(pic/05.jpg);"></div>
+        <div class="box_in " style="background-image: url(pic/06.jpg);"></div>
+        <div class="box_in " style="background-image: url(pic/07.jpg);"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="slid_items">
+    <!-- 1. -->
+    <div class="Mi_architecture">
+      <div class="Mi_architecture_box">
+        <div class="Mi_architecture_left">
+          <div class="Mi_architecture_left_text">
+            <h2 class="slide01_h2">体 育 馆</h2>
+            <span class="slide01_span">——————</span><br>
+            <a href="#" class="slide01_a">LEARN MORE > </a>
+          </div>
+        </div>
+        <div class="Mi_architecture_right">
+          <img src="pic/Sport.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. -->
+    <div class="Mi_humanity">
+      <div class="Mi_humanity_box">
+        <div class="Mi_humanity_left">
+          <img src="pic/Art.jpg" alt="">
+        </div>
+
+        <div class="Mi_humanity_right">
+          <div class="Mi_humanity_right_text">
+            <h2 class="slide02_h2">艺 术 楼</h2>
+            <span class="slide02_span">——————</span><br>
+            <a href="#" class="slide02_a">LEARN MORE > </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer_left">
+        <div class="footer_left_box">
+            <h2>大美</h2>
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张院</h2>
+        </div>
+    </div>
+    <div class="footer_mid">
+        <div class="footer_mid_box">
+            <img src="pic/logo.png" alt="">
+        </div>
+    </div>
+    <div class="footer_right">
+        <ul>
+            <li><a href="">学校官网</a></li>
+            <li><a href="">学校公众号</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script>
+    $(window).scroll(function () {
+      const
+        a = $(this).scrollTop(),
+        b = 800;
+      $("h1").css({
+        backgroundPosition: "center " + a / 2 + "px"
+      });
+
+      $(".parallax").css({
+        top: a / 1.6 + "px",
+        opacity: 1 - a / b
+      });
+
+
+    });
+
+    $(function () {
+
+      // alert($('.Mi_xu').offset().top)
+      // 鼠标滚动
+
+      $(window).scroll(function () {
+
+        // 页面被卷去的头部
+
+        let Top = $(window).scrollTop()
+        if(Top > 250){
+          $('.box_in_text').slideDown("slow")
+        }
+
+        if (Top >= $('.box_out').offset().top) {
+          $('.box ').slideDown(1000)
+          $('.box .box_in:nth-child(2)').slideDown(1200)
+          $('.box .box_in:nth-child(3)').slideDown(1400)
+          $('.box .box_in:nth-child(4)').slideDown(1500)
+        }
+
+        // 2.体育馆
+        if (Top >= $('.Mi_architecture').offset().top - 350) {
+          $('.Mi_architecture_right').animate({
+            width: '70%'
+          }, 800, function () {
+            $('.slide01_h2').animate({
+              left: '100'
+            }, function () {
+              // alert('1234')
+              $('.slide01_span').animate({
+                left: '100'
+              }, function () {
+                $('.slide01_a').animate({
+                  left: '100'
+                })
+              })
+            })
+          })
+
+          // 3.艺术楼
+          if (Top >= $('.Mi_architecture').offset().top -200) {
+            $('.Mi_humanity_left').animate({
+              width: '70%'
+            }, 800, function () {
+              $('.slide02_h2').animate({
+                left: '70'
+              }, function () {
+                // alert('1234')
+                $('.slide02_span').animate({
+                  left: '70'
+                }, function () {
+                  $('.slide02_a').animate({
+                    left: '70'
+                  })
+                })
+              })
+            })
+          }
+
+
+
+        }
+
+      })
+
+
+
+    })
+    // parallax scrolling
+
+    document.addEventListener("scroll", () => {
+      const
+        top = window.pageYOffset,
+        one = document.querySelector(".one");
+
+      one.style.bottom = -(top * 0.1) + "px";
+     
+    });
+
+    //手风琴
+    let box_ins = document.querySelectorAll('.box_in')
+    // 调用数组的每个元素
+    box_ins.forEach(box_in => {
+      box_in.addEventListener('mouseover', function () {
+        removeBox_inClass()
+        box_in.classList.add('click')
+      })
+    })
+
+    function removeBox_inClass() {
+      box_ins.forEach(box_in => {
+        box_in.classList.remove('click')
+      })
+    }
+
+  </script>
+</body>
+
+</html>

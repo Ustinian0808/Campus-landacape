@@ -1,0 +1,1138 @@
+/* 图标字体声明 注意路径问题 */
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?fz2woo');
+    src: url('../fonts/icomoon.eot?fz2woo#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?fz2woo') format('truetype'),
+        url('../fonts/icomoon.woff?fz2woo') format('woff'),
+        url('../fonts/icomoon.svg?fz2woo#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #F7F7F7;
+}
+
+/* 登录注册窗口 */
+.logon_mask,
+.rgister_mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 450px;
+    text-align: center;
+    padding: 80px 100px;
+    background-color: #f5f5f5;
+    z-index: 999;
+    transition: all 1s linear;
+}
+
+
+@keyframes move_mask {
+    0% {
+        top: -30%;
+    }
+
+    100% {
+        top: 45%;
+    }
+}
+
+@keyframes move_mask1 {
+    0% {
+        top: 45%;
+    }
+
+    100% {
+        top: -30%;
+    }
+}
+
+.logon_mask h3,
+.rgister_mask h3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.inp {
+    position: relative;
+}
+
+.inp .sign_none,
+.rgister_sign_none {
+    position: absolute;
+    top: -140px;
+    left: 425px;
+    font-family: 'icomoon';
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.inp .sign_none:hover {
+    color: red;
+}
+
+.rgister_sign_none:hover {
+    color: red;
+}
+
+.logon_mask .inp input,
+.rgister_mask .inp input {
+    width: 350px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    text-indent: 3em;
+}
+
+.Username {
+    font-family: 'icomoon';
+    position: absolute;
+    top: 6px;
+    left: 15px;
+    font-size: 14px;
+}
+
+.Password {
+    font-family: 'icomoon';
+    position: absolute;
+    top: 56px;
+    left: 15px;
+    font-size: 14px;
+}
+
+.logon_mask button,
+.rgister_mask button {
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 700;
+    background-color: #5296FB;
+}
+
+.mask_end p {
+    font-size: 14px;
+    color: #333;
+    font-weight: 700;
+}
+
+.mask_end ul {
+    margin-top: 10px;
+    padding-left: 70px;
+}
+
+.mask_end ul li {
+    font-family: 'icomoon';
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.mask_end ul li:nth-child(3) {
+    color: #7BB32E;
+}
+
+/* 登录注册窗口结束 */
+
+/* 提示弹窗部分 */
+.tip {
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    width: 340px;
+    height: 80px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 99;
+    background-color: #E7E7E9;
+    transition: all .4s;
+}
+
+.tip span {
+    color: #000;
+    font-weight: 700;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 75px;
+    padding: 0 100px;
+    border-bottom: 1.5px solid #fff;
+    background-color: #fff;
+}
+
+
+.logo {
+    float: left;
+    width: 160px;
+    height: 75px;
+    background: url(../pic/Main/logo2.png) no-repeat;
+}
+
+nav {
+    float: left;
+    height: 100%;
+    position: relative;
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+    height: 75px;
+    line-height: 75px;
+    font-size: 16px;
+    text-align: center;
+    color: #222;
+
+    cursor: pointer;
+}
+
+nav ul li::after {
+    position: absolute;
+    right: 0px;
+    font-family: 'icomoon';
+    content: '\e902';
+    font-size: 20px;
+    transition: all .4s;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 0 34px;
+}
+nav ul li:hover {
+    color: #2D8CF0;
+}
+
+nav ul li:hover::after {
+    transform: rotate(-90deg);
+    color: #2D8CF0;
+}
+
+nav ul li:last-child {
+    position: relative;
+    font-family: 'icomoon';
+    font-size: 20px;
+    line-height: 75px;
+    padding: 0 34px;
+}
+
+nav ul li:last-child::after {
+    content: '';
+}
+
+nav ul li:last-child:hover {
+    color: #222;
+}
+.nav_more_dis {
+    position: absolute;
+    z-index: 100;
+    top: 63px;
+    left: 15px;
+    width: 150px;
+    height: 0px;
+    text-align: center;
+    font-size: 14px;
+    overflow: hidden;
+    background-color: #F7F7F7;
+    transition: all .3s;
+    border-radius: 15px;
+}
+
+.nav_more_dis::after {
+    position: absolute;
+    top: -12px;
+    left: 19px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 12px 10px;
+    border-color: transparent transparent #F7F7F7 transparent;
+}
+
+.nav_more_dis h6 {
+    width: 100%;
+    height: 20px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav_more_dis p {
+    letter-spacing: 2px;
+    height: 25px;
+}
+
+/* 下拉框 */
+nav .pull-down {
+    position: absolute;
+    top: 75px;
+    left: -305px;
+    width: 1600px;
+    height: 0px;
+    z-index: 20;
+    overflow: hidden;
+    background-color: #fff;
+    transition: all .3s ease;
+}
+
+nav:hover .pull-down {
+    height: 350px;
+
+}
+
+.pull-down .solar_terms_24 {
+    width: 530px;
+    height: 350px;
+    margin-left: 300px;
+}
+
+.pull-down .solar_terms_24 td {
+    text-align: center;
+    width: 130px;
+    height: 50px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.pull-down .solar_terms_24 td:hover {
+    color: #1D7AAE;
+    text-shadow: 1px 2px rgba(0, 0, 0, .2);
+}
+
+/* 搜索框 */
+.header_right {
+    float: right;
+    width: 310px;
+    height: 100%;
+    text-align: center;
+    line-height: 75px;
+}
+
+.search {
+    position: relative;
+    float: left;
+    width: 170px;
+    height: 100%;
+}
+
+.search i {
+    position: absolute;
+    left: 147px;
+    font-family: 'icomoon';
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.search_in input {
+    position: absolute;
+    right: 0px;
+    top: 22px;
+    float: left;
+    width: 30px;
+    height: 32px;
+    border-radius: 15px;
+    text-indent: 1em;
+    color: #000;
+    background-color: rgb(255, 255, 255, .3);
+    transition: all .3s;
+}
+
+.logon {
+    float: right;
+    /* margin-right: 50px; */
+    width: 130px;
+    height: 100%;
+    /* background-color: #d7d8db; */
+    z-index: 1;
+}
+
+.logon a {
+    font-size: 13px;
+    /* margin-right: 5px; */
+    padding: 6px 9px;
+    border: 1px solid #ccc;
+    border-radius: 32px;
+    transition: all .4s;
+}
+.logon a:hover {
+    color: #2D8CF0;
+    border-color: #2D8CF0;
+}
+
+/* 焦点轮播图 */
+.banner {
+    margin: 110px auto;
+    width: 1200px;
+    height: 550px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.focus {
+    position: relative;
+    width: 1200px;
+    height: 550px;
+    overflow: hidden;
+}
+
+.focus ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+}
+
+.focus ul li {
+    float: left;
+}
+
+/* 左右按钮部分 */
+.focus .arrow-l {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    top: 50%;
+    left: 0;
+    width: 30px;
+    height: 52px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 35px;
+    background-color: rgba(0, 0, 0, .3);
+    transform: translateY(-50%);
+}
+
+.focus .arrow-r {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    top: 50%;
+    right: 0;
+    width: 30px;
+    height: 52px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, .3);
+    transform: translateY(-50%);
+}
+
+
+
+/* 焦点 */
+.focus ol {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.focus ol li {
+    float: left;
+    margin: 0 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.current {
+    background-color: #2D8CF0 !important;
+}
+
+/* svg部分 */
+/* .banner .content {
+    position: relative;
+}
+
+.custom-shape-divider-top-1654334675 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1654334675 svg {
+    position: relative;
+    display: block;
+    width: calc(116% + 1.3px);
+    height: 81px;
+}
+
+.custom-shape-divider-top-1654334675 .shape-fill {
+    fill: #FFFFFF;
+} */
+
+.text p {
+    margin-top: 15px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+
+/* 侧边栏部分 */
+.home_bar {
+    position: absolute;
+    top: 550px;
+    right: 0;
+    width: 28px;
+    height: 132px;
+    margin-right: 87px;
+    z-index: 999;
+}
+
+.home_bar ul li {
+    position: relative;
+    font-family: 'icomoon';
+    text-align: center;
+    width: 28px;
+    height: 33px;
+    padding: 5px 4px;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    background-color: #fff;
+}
+
+.home_bar ul li .bar_er {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -115px;
+    width: 110px;
+    height: 150px;
+    padding: 15px 10px;
+
+    background-color: #fff;
+}
+
+.home_bar ul li .bar_er h2 {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #6d7378;
+    font-weight: normal;
+}
+
+.home_bar ul li:hover {
+    color: #2D8CF0;
+}
+
+.home_bar .personal,
+.bar_up_text {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 32px;
+    width: 0px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #6d7378;
+    background-color: #fff;
+    transition: width .3s;
+}
+
+
+.bar_up {
+    display: none;
+    width: 100px;
+}
+
+.home_bar ul li i {
+    font-size: 14px;
+}
+
+/* Spring Summer Autumn Winter 导航简介start  */
+.all_seasons {
+    margin-top: 60px;
+}
+
+.all_seasons ul {
+    width: 100%;
+    height: 300px;
+    padding-top: 20px;
+    padding-left: 60px;
+    background-color: #F8F8F8;
+    box-shadow: 1px 10px 20px -4px rgba(0, 0, 0, .3);
+}
+
+.all_seasons ul li {
+    float: left;
+    width: 220px;
+    height: 250px;
+    margin-right: 65px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.all_seasons ul li h2 {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.all_seasons ul li div {
+    width: 220px;
+    height: 200px;
+}
+
+.all_seasons ul li:hover {
+    box-shadow: 1px 10px 20px -4px rgba(0, 0, 0, .3);
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: move .2s linear forwards;
+}
+
+/* 为li添加动画 */
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, -3px);
+    }
+}
+
+
+
+/* Spring start */
+.spring {
+    width: 100%;
+    height: 520px;
+    margin-top: 100px;
+}
+
+.season_top {
+    height: 60px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.season_top h2 {
+    float: left;
+    height: 100%;
+    font-size: 35px;
+    line-height: 60px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.season_top h2 i {
+    font-weight: 400;
+}
+
+.season_top .season_more {
+    float: right;
+    height: 100%;
+    line-height: 60px;
+    padding-right: 30px;
+}
+
+.season_top .season_more a {
+    position: relative;
+    font-family: 'icomoon';
+    font-size: 18px;
+}
+
+.season_top .season_more a i {
+    position: absolute;
+    top: -18px;
+    left: 50px;
+}
+
+.spring_main {
+    width: 100%;
+    height: 440px;
+}
+
+.spring_left {
+    position: relative;
+    float: left;
+    width: 740px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.spring_left ul {
+    position: absolute;
+    width: 600%;
+}
+
+.spring_left ul li {
+    float: left;
+}
+
+.spring_right {
+    float: left;
+    margin-left: 10px;
+}
+
+.spring_right ul li {
+    width: 450px;
+    height: 88px;
+    border-bottom: 2px solid #fff;
+    background-color: #F4F4F4;
+    transition: all .4s;
+}
+
+.spring_right ul li:hover {
+    border-bottom: 2px solid #2D8CF0;
+    background-color: #fff;
+}
+
+.spring_right ul li div {
+    float: left;
+}
+
+.spring_right ul li .new_card_left {
+    width: 90px;
+    height: 88px;
+    font-size: 35px;
+    font-weight: 700;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.spring_right ul li .new_card_right {
+    width: 360px;
+    height: 86px;
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.spring_right ul li .new_card_right span {
+    font-size: 25px;
+}
+
+.card_currenct {
+    color: #2D8CF0 !important;
+}
+
+
+
+/* autumn start */
+.autumn {
+    width: 100%;
+    height: 450px;
+    margin-top: 100px;
+}
+
+.autumn_box {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-color: #F4F4F4;
+    box-shadow: 1px 10px 20px -4px rgba(0, 0, 0, .3);
+}
+
+.autumn_box ul {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 800px;
+    height: 200px;
+}
+
+.autumn_box ul:hover {
+    cursor: pointer;
+}
+
+.autumn_box ul li {
+    float: left;
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 200px;
+    transition: all .4s;
+}
+
+/* Summer & Winter strat */
+.summer_winter {
+    width: 100%;
+    height: 530px;
+    margin-top: 80px;
+}
+
+.summer_winter .s_w {
+    width: 100%;
+    height: 450px;
+    padding-top: 15px;
+    padding-left: 15px;
+    background-color: #fff;
+}
+
+.summer_winter .s_w ul li {
+    position: relative;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 280px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgb(224, 218, 218);
+}
+
+/* 图片里的文字 */
+.summer_winter .s_w ul li .img_content {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 150px;
+    z-index: 2;
+}
+
+.img_content h5 {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+.img_content p {
+    width: 100%;
+    height: 20px;
+    line-height: 8px;
+    color: #fff;
+}
+
+/* img_content动画 */
+.summer_winter .s_w ul li:hover .img_content {
+    animation: come_up .5s linear forwards;
+}
+
+@keyframes come_up {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 65px;
+    }
+}
+
+.summer_winter .s_w ul li::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .4);
+
+}
+
+.summer_winter .s_w ul li:hover::before {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: magnify .4s linear forwards;
+}
+
+@keyframes magnify {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    100% {
+        width: 280px;
+        height: 200px;
+    }
+}
+
+/* other start */
+
+.other {
+    width: 100%;
+    height: 570px;
+    margin-top: 80px;
+}
+
+.other .other_more {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+}
+
+.other .season_top {
+    margin-bottom: 0;
+}
+
+.other .other_more p {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.other .other_more a {
+    font-size: 14px;
+    font-style: italic;
+    color: #1D7AAE;
+}
+
+
+.other .other_content {
+    width: 100%;
+    height: 450px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #fff;
+    /* 透视效果 */
+    perspective: 400px;
+}
+
+.other .other_content ul {
+    padding: 5px 50px;
+}
+
+.other .other_content li {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px;
+
+    position: relative;
+    transition: all 2.3s;
+    /* 保留空间立体效果 */
+    transform-style: preserve-3d;
+}
+
+/* 偶数li设置效果 */
+.other .other_content li:nth-child(even) {
+    width: 200px;
+    height: 30px;
+    line-height: 35px;
+    font-size: 18px;
+    color: #1D7AAE;
+    font-style: italic;
+}
+
+.other .other_content li:nth-child(2),
+.other .other_content li:nth-child(4) {
+    margin-top: 170px;
+}
+
+.other .other_content li:nth-child(7),
+.other .other_content li:nth-child(9) {
+    margin-top: 25px;
+}
+
+/* 经过奇数li时翻转 */
+.other .other_content li:nth-child(odd):hover {
+    transform: rotateY(180deg);
+}
+
+.other_front,
+.other_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.other_front {
+    z-index: 1;
+    /* 解决翻转不过来 */
+    /* backface-visibility: hidden; */
+    transform: translateZ(1px);
+    background-color: pink;
+}
+
+.other_back {
+    /* backface-visibility: hidden; */
+    background-color: purple;
+    transform: rotateY(180deg);
+}
+
+
+/* footer start */
+.joinus {
+    margin-top: 50px;
+    padding: 50px 0;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-color: #45457c;
+}
+
+.joinus h2 {
+    height: 54px;
+    line-height: 54px;
+    font-size: 36px;
+    color: #fff;
+}
+
+.joinus p {
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    width: auto;
+    margin: 8px 0 32px;
+    color: #fff;
+}
+
+.joinus button {
+    width: 300px;
+    height: 64px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #222;
+    border-radius: 32px;
+}
+
+.joinus button:hover {
+    background-color: #d7d8db;
+    transition: all .5s;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+}
+
+.footer_link {
+    float: left;
+    width: 400px;
+}
+
+.footer_link tr {
+    width: 400px;
+    height: 40px;
+}
+
+.footer_link tr td {
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+.focu_us {
+    float: left;
+    width: 250px;
+    height: 80px;
+    margin-left: 30px;
+}
+
+.focu_us p {
+    line-height: 45px;
+    height: 45px;
+    padding-left: 5px;
+    font-size: 15px;
+    color: #222;
+}
+
+.focu_us span {
+    position: relative;
+    font-family: 'icomoon';
+    display: inline-block;
+    width: 110px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 25px;
+    padding-left: 37px;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.focu_us span i {
+    position: absolute;
+    top: 1px;
+    left: 10px;
+    font-size: 18px;
+}
+
+.focu_us span:hover {
+    background-color: #d7d8db;
+    transition: all .5s;
+}
+
+/* 添加联系二维码 */
+.focu_us span .contact_wb {
+    display: none;
+    position: absolute;
+    top: -230px;
+    left: 0;
+    padding: 28px 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 16px 0 rgb(0 0 0 / 20%);
+    background-color: #fff;
+}
+
+.focu_us span .contact_wb h2 {
+    text-align: center;
+    font-size: 15px;
+    margin: 0 0 8px;
+    color: #6d7378;
+    font-weight: normal;
+}
+
+.focu_us span .contact_wx {
+    display: none;
+    position: absolute;
+    top: -230px;
+    left: 0;
+    padding: 28px 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 16px 0 rgb(0 0 0 / 20%);
+    background-color: #fff;
+}
+
+.focu_us span .contact_wx h2 {
+
+    text-align: center;
+    font-size: 15px;
+    margin: 0 0 8px;
+    color: #6d7378;
+    font-weight: normal;
+}
+
+.end {
+    text-align: center;
+    border-top: 1px solid #ccc;
+}

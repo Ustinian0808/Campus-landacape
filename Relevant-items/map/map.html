@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美景坐标</title>
+
+    <!-- 引入boootstrap css -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css" />
+    <!-- 引入jQuery.min.js -->
+    <script src="../../js/jQuery.min.js"></script>
+    <!-- 引入vue.js -->
+    <script src="js/vue.js"></script>
+    <style>
+        body {
+            background-image: url(pic/map.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .left {
+            float: left;
+            width: 33%;
+            height: 100%;
+            padding: 30px 0 0 30px;
+            /* background-color: pink; */
+        }
+
+        .right {
+            height: 800px;
+            width: 67%;
+            float: left;
+            position: relative;
+            /* background-color: #9de4b6; */
+        }
+
+        .box {
+            width: 70%;
+            /* background-color: #9aadae; */
+        }
+
+        .box .slid {
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .list_m {
+            width: 100%;
+
+        }
+
+        .list_m tr {
+            width: 100%;
+            height: 95px;
+            background-color: #fff;
+        }
+
+        .list_m tr td:nth-child(1) {
+            width: 20%;
+            padding-left: 10px;
+            font-size: 25px;
+            color: #E73039;
+        }
+
+        .list_m tr td:nth-child(2) {
+            width: 45%;
+        }
+
+        .list_m tr td:nth-child(2) h5 {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .list_m tr td:nth-child(2) p {
+            font-size: 13px;
+        }
+
+        .list_m tr td:nth-child(3) {
+            width: 35%;
+            /* border-radius: 15%; */
+            overflow: hidden;
+        }
+
+        .list_m tr td:nth-child(3) img {
+            width: 100%;
+            padding: 3px 15px 3px 5px;
+        }
+
+
+        .right ul li {
+            position: absolute;
+            list-style: none;
+            font-size: 20px;
+            color: #E73039;
+            transition: all .5s;
+        }
+        .right ul li:hover {
+            font-size: 28px;
+        }
+        .right ul li:nth-child(1) {
+
+            top: 73%;
+            left: 77%;
+        }
+
+        .right ul li:nth-child(2) {
+
+            top: 55%;
+            left: 60%;
+        }
+
+        .right ul li:nth-child(3) {
+
+            top: 48%;
+            left: 73%;
+        }
+
+        .right ul li:nth-child(4) {
+
+            top: 20%;
+            left: 46%;
+        }
+
+        .right ul li:nth-child(5) {
+
+            top: 28%;
+            left: 51%;
+        }
+
+        .right ul li:nth-child(6) {
+
+            top: 51%;
+            left: 28%;
+        }
+
+        .right ul li:nth-child(7) {
+
+            top: 73%;
+            left: 77%;
+        }
+
+        /* <!-- Swiper --> */
+        /* .show_box {
+            display: none;
+        } */
+
+        .noshow {
+            display: none;
+            transition: all .5;
+        }
+        .yesshow {
+            display: block;
+            transition: all .5s;
+        }
+        .show {
+            position: relative;
+            position: fixed;
+            top: 50%;
+            left: 52%;
+            transform: translate(-50%, -50%);
+            width: 54%;
+            height: 550px;
+
+            background: #fff;
+
+            margin: 0;
+            padding: 25px 20px 25px;
+            border-radius: 7px;
+        }
+
+        .show .colse {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .swiper {
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mySwiper2 {
+            height: 80%;
+            width: 100%;
+        }
+
+        .mySwiper {
+            height: 20%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .mySwiper .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .mySwiper .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            /* background-size: cover; */
+            object-fit: cover;
+        }
+
+        /* 淡入淡出 */
+        .hehe-enter,
+        .hehe-leave-to {
+            opacity: 0;
+        }
+
+        .hehe-enter-to,
+        .hehe-leave {
+            opacity: 1;
+        }
+
+        .hehe-enter-active,
+        .hehe-leave-active {
+            transition: all .5s;
+        }
+
+        /* 收缩 */
+        .mybox-leave-active,
+        .mybox-enter-active {
+            transition: all .2s;
+        }
+
+        .mybox-leave-active,
+        .mybox-enter {
+            height: 0px !important;
+        }
+
+        .mybox-leave,
+        .mybox-enter-active {
+            height: auto;
+        }
+
+        .rotatespan_up {
+            transform: rotate(180deg);
+            transition: all .5s;
+        }
+
+        .rotatespan_down {
+            transition: all .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- 左边侧边栏 -->
+        <div class="left">
+            <form class="form-inline">
+                <input type="search" class="form-control" placeholder="请输入关键词" style="width: 70%;">
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>
+                    搜索</button>
+            </form>
+            <div class="box">
+                <div class="slid" @click="togglebox"><span class="glyphicon glyphicon-menu-up"
+                        :class="{'rotatespan_up':isSpread,'rotatespan_down':!isSpread}"></span> {{isSpread ? '收起' :
+                    '展开'}}
+                </div>
+
+                <transition name="mybox">
+                    <table class="list_m " v-show="boxshow" :key="1">
+
+                        <tr v-for="(item , index) in mapList" @click="Show(index)">
+                            <td><span class="glyphicon glyphicon-map-marker"></span></td>
+                            <td>
+                                <h5>{{item.address}}</h5>
+                                <p>{{item.txt}}</p>
+                            </td>
+                            <td><img v-bind:src="item.img" alt=""></td>
+                        </tr>
+                    </table>
+                </transition>
+            </div>
+
+        </div>
+        <!-- 地图坐标 -->
+        <div class="right">
+            <ul style="cursor: pointer;">
+                <li v-for="(item,index) in 6" @click="Show(index)"><span class="glyphicon glyphicon-map-marker"></span></li>
+            </ul>
+
+        </div>
+
+        <!-- 详细展示 -->
+        <div class="show_box":class="{'yesshow':show,'noshow':!show}" >
+            <transition-group name="hehe" tag="div">
+
+                <div class="show" v-show="show" :key="1">
+
+                    <span class="colse glyphicon glyphicon-remove" @click="Show(1)"></span>
+                    <!-- Swiper -->
+
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                        class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="(itemImg , indexImg) in imgList">
+                                <img v-bind:src="itemImg" alt="暂无图片" />
+                            </div>
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="(itemImg , indexImg) in imgList">
+                                <img v-bind:src="itemImg" alt="暂无图片" />
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </transition-group>
+        </div>
+    </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script>
+
+
+        let app = new Vue({
+            el: "#app",
+            // imgList:[],
+            data: {
+                show: false,
+                boxshow: true,
+                isSpread: true,
+                imgList: [],
+                imgData: [
+                    ['pic/A01.jpg', 'pic/A02.jpg', 'pic/A03.jpg'],
+                    ['pic/B01.jpg', 'pic/B02.jpg', 'pic/B03.jpg', 'pic/B04.jpg', 'pic/B05.jpg','pic/B06.jpg','pic/B07.jpg',],
+                    ['pic/C01.jpg', 'pic/C02.jpg', 'pic/C03.jpg', 'pic/C04.jpg', ],
+                    ['pic/D01.jpg', 'pic/D02.jpg', 'pic/D03.jpg', 'pic/D04.jpg', 'pic/D05.jpg','pic/D06.jpg',],
+                    ['pic/E01.jpg', 'pic/E02.jpg', 'pic/E03.jpg', 'pic/E04.jpg', 'pic/E05.jpg',],
+                    ['pic/F01.jpg', 'pic/F02.jpg', 'pic/F03.jpg', 'pic/F04.jpg', ],
+                ],
+
+                mapList: [
+                    { address: '校门', txt: '校门内是书生意气，校门外是大千世界！', img: 'pic/01.jpg' },
+                    { address: '望岳楼', txt: '张院新地标，酷炫新综合教学楼。', img: 'pic/02.jpg' },
+                    { address: '艺术楼', txt: '金色灯光环绕的艺术楼，享受视觉盛宴。', img: 'pic/03.jpg' },
+                    { address: '樱花路', txt: '樱花纷飞，满树樱花，烂漫整个春天。', img: 'pic/04.jpg' },
+                    { address: '银杏路', txt: '秋风吹拂，银杏镀上金衣，热烈而灿烂。', img: 'pic/05.jpg' },
+                    { address: '图书馆', txt: '典藏云集，浓浓书香。', img: 'pic/06.jpg' },
+
+                ]
+            },
+
+            methods: {
+
+                Show(index) {
+                    let that = this
+                    this.show = !this.show;
+                    // 获取侧边栏/地图标点index
+                    console.log(index)
+                    // console.log(that.imgData[index])
+                    that.imgList = that.imgData[index]
+                    // console.log(that.imgList)
+                    console.log(this.show)
+                },
+                
+                togglebox() {
+                    this.boxshow = !this.boxshow
+                    this.isSpread = !this.isSpread
+                }
+            }
+        })
+
+
+    </script>
+
+
+
+
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            observer: true, // 修改swiper自己或子元素时，自动初始化swiper
+            observeParents: true, // 修改swiper的父元素时，自动初始化swiper
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            observer: true, // 修改swiper自己或子元素时，自动初始化swiper
+            observeParents: true, // 修改swiper的父元素时，自动初始化swiper
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    </script>
+</body>
+
+</html>
